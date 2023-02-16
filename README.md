@@ -1,6 +1,8 @@
 # lite-dhcp
 超小的DHCP客户端,能够以非特权模式运行,不依赖其他组件.
 
+无聊写的软件,能用. 这是成品,可以直接管理网卡DHCP.
+
 基于unix哲学编程,每一个组件功能单一,能够独立运行.
 
 ## ldhcp
@@ -76,6 +78,8 @@ ldhcp 为使用ldhcp用户启动
 ```bash
 sh install.sh
 ```
+
+目录下有 `ldhcp.service`, `dhcpd.service`, 请自行修改相关配置, 加入你的参数. 用systemctl安装
 
 安装前请清理其他DHCP管理软件,`NetworkManager`, `systemd-networkd`, `udhcpd`, `isc-dhcpd`等
 
