@@ -143,9 +143,9 @@ int main(int argc, char *argv[])
 	if (argc > 4){
 	buffer=argv[4];
 	eth0=argv[1];
-	memcpy(usruid,"nobody",7);
+		
 	if (*argv[2] == '-' && *(argv[2] + 1) == 'u'){
-	if (strlen(argv[3]) < 16){memcpy(usruid,argv[3],15);}
+	if (strlen(argv[3]) < 16){strcpy(usruid,argv[3]);} else {memcpy(usruid,"nobody",7);}
 	}
 	
 	}
