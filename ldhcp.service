@@ -1,0 +1,14 @@
+[Unit]
+Description=ldhcp Service
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=20s
+ExecStart=/usr/sbin/ldhcp -i ens32 -h debian -u systemd-network
+ExecReload=/usr/sbin/ldhcp -i ens32 -h debian -u systemd-network
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target

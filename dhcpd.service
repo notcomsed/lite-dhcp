@@ -1,0 +1,14 @@
+[Unit]
+Description=dhcpd Service
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=20s
+ExecStart=/usr/sbin/dhcpd ens32 -u ldhcp -d 
+ExecReload=/usr/sbin/dhcpd ens32 -u ldhcp -d 
+LimitNOFILE=1048576
+
+[Install]
+WantedBy=multi-user.target
